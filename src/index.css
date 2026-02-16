@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 25% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 210 22% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 210 22% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 180 70% 50%;
+    --primary-foreground: 210 25% 8%;
+
+    --secondary: 210 18% 16%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 210 18% 16%;
+    --muted-foreground: 210 10% 55%;
+
+    --accent: 180 70% 50%;
+    --accent-foreground: 210 25% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 18% 18%;
+    --input: 210 18% 18%;
+    --ring: 180 70% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 25% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 180 70% 50%;
+    --sidebar-primary-foreground: 210 25% 8%;
+    --sidebar-accent: 210 18% 16%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 210 18% 18%;
+    --sidebar-ring: 180 70% 50%;
+
+    /* Custom tokens */
+    --glow: 180 70% 50%;
+    --card-hover: 210 22% 15%;
+    --text-dim: 210 10% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glow-border {
+    box-shadow: 0 0 15px hsl(var(--glow) / 0.4), 0 0 30px hsl(var(--glow) / 0.2);
+  }
+
+  .glow-border-sm {
+    box-shadow: 0 0 8px hsl(var(--glow) / 0.3);
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.3);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(180 70% 50%), hsl(180 80% 65%));
+  }
+
+  .section-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .progress-bar-fill {
+    transition: width 1.2s ease-out;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px hsl(0 0% 0% / 0.4);
+  }
+}
