@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/modern-jubaer-folio/',
+  // base: '/',  // or remove this line entirely
   server: {
     host: "::",
     port: 8080,
